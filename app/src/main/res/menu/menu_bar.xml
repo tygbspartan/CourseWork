@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/work_id"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="Works"
+        />
+
+    <item
+        android:id="@+id/add_id"
+        android:icon="@drawable/ic_add_black_24dp"
+        android:title="Add Work"
+        />
+
+    <item
+        android:id="@+id/profile_id"
+        android:icon="@drawable/ic_face_black_24dp"
+        android:title="Profile"
+        />
+</menu>
