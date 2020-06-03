@@ -42,6 +42,20 @@
         android:hint="Enter title name.." />
 
     <TextView
+        android:id="@+id/work_description"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Work Description:"/>
+
+    <EditText
+        android:id="@+id/desc_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write description.." />
+
+    <TextView
         android:id="@+id/location"
         android:textSize="20sp"
         android:textColor="#000"
@@ -84,7 +98,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/add_button"
+        android:onClick="add_work"
         android:text="Add"
         android:background="@color/colorAccent"
         android:layout_gravity="center"
