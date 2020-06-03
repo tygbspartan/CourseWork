@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EG$</string>
+
+    <array name="salary">
+        <item>Rs.1000 to Rs.5000</item>
+        <item>Rs.5000 to Rs.15000</item>
+        <item>Rs.15000 to Rs.25000</item>
+        <item>Rs.25000 to Rs.30000</item>
+        <item>Rs.30000+</item>
+
+    </array>
 </resources>
