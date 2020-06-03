@@ -77,11 +77,11 @@
         android:layout_height="wrap_content"
         android:text="Prefered Salary:"/>
 
-    <EditText
-        android:id="@+id/salary_edit"
+    <Spinner
+        android:id="@+id/salarySpinner"
+        android:entries="@array/salary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter salary.." />
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/add_button"
