@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textTitle"
+        android:textSize="30sp"
+        android:text="Work Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textDesc"
+        android:textSize="20sp"
+        android:text="Work Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textLoc"
+        android:textSize="20sp"
+        android:text="Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textContact"
+        android:textSize="20sp"
+        android:text="Contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textSalary"
+        android:textSize="20sp"
+        android:text="Salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>
