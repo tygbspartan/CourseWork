@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/ic_launcher_background"
+    android:background="#3C3F41"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView"
-        android:src="@drawable/logo"
+        android:src="@drawable/eg"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_width="150dp"
@@ -24,7 +24,7 @@
         android:gravity="center"
         android:layout_centerVertical="true"
         android:text="All rights reserved 2020 by EG$"
-        android:textColor="#282e28" />
+        android:textColor="#fff" />
 
 
 </RelativeLayout>

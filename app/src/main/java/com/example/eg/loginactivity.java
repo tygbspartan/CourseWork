@@ -22,6 +22,16 @@ public class loginactivity extends AppCompatActivity {
     TextView registerhere;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (mAuth.getCurrentUser() != null) {
+            finish();
+            startActivity(new Intent(getApplicationContext(), Works.class));
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginactivity);
@@ -59,6 +69,7 @@ public class loginactivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             startActivity(new Intent(loginactivity.this, Works.class));
                             Toast.makeText(loginactivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            loginactivity.this.finish();
 
                         } else {
                             // If sign in fails, display a message to the user.

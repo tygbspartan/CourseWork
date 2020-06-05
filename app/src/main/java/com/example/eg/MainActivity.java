@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            finish();
                             // Sign in success, update UI with the signed-in user's information
                             startActivity(new Intent(MainActivity.this, loginactivity.class));
                             Toast.makeText(MainActivity.this, "Signup Success", Toast.LENGTH_SHORT).show();

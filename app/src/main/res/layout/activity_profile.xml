@@ -7,13 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <TextView
-        android:text="Profile"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="125dp"
+        android:padding="15dp"
+        tools:context=".Profile">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:gravity="center"
+            android:text="PROFILE"
+            android:textStyle="italic"
+            android:textColor="#0725E8"
+            android:textSize="30sp" />
+
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:onClick="logout"
+        android:text="Logout"
+        android:background="#F83239"
+        android:layout_gravity="center"
+        android:layout_marginTop="610dp"
+        android:layout_marginLeft="160dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

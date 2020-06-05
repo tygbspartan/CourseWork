@@ -68,8 +68,6 @@ public class Works extends AppCompatActivity {
     }
 
     //onstart
-
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -83,10 +81,9 @@ public class Works extends AppCompatActivity {
                     listWorks.add(obj);
                 }
                 adapter = new WorksAdapter(Works.this, listWorks);
-//                adapter.notifyDataSetChanged();
+
                 lv.setAdapter(adapter);
 
-                Toast.makeText(Works.this, "Your work has been added.", Toast.LENGTH_SHORT).show();
             }
 
             @Override
