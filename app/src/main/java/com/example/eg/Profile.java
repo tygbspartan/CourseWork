@@ -13,10 +13,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Profile extends AppCompatActivity {
 
+    FirebaseAuth mFirebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
 
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -47,8 +51,10 @@ public class Profile extends AppCompatActivity {
     }
 
     public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),loginactivity.class));
-        finish();
+        mFirebaseAuth.signOut();
+        Intent intent = new Intent(Profile.this,loginactivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
     }
 }
