@@ -75,7 +75,7 @@ public class Works extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                    listWorks.clear();
                 for (DataSnapshot JobSnapshot : dataSnapshot.getChildren()) {
                     Job obj = JobSnapshot.getValue(Job.class);
                     listWorks.add(obj);
