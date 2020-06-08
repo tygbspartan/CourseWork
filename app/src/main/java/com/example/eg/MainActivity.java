@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText signup_email, signup_pass, signup_confirmpass, signup_fname, signup_contact,signup_location;
     String name, contact, location, email,pass, confirm_pass;
 
+    DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(mAuth.getUid());
+        databaseReference = firebaseDatabase.getReference("Users").child(mAuth.getCurrentUser().getUid());
         ViewProfile viewProfile = new ViewProfile(name,email,contact,location);
-        myRef.setValue(viewProfile);
+        databaseReference.setValue(viewProfile);
     }
 }

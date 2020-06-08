@@ -7,71 +7,95 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="match_parent"
-        android:layout_marginBottom="105dp"
+        android:layout_above="@+id/logout"
+        android:padding="15dp"
         tools:context=".Profile">
 
         <ImageView
             android:id="@+id/pic"
-            android:layout_width="103dp"
-            android:layout_height="103dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:layout_gravity="center"
-            tools:src="@drawable/image"/>
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/image" />
 
         <TextView
             android:id="@+id/profileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pic"
             android:text="Full Name"
             android:textSize="30dp"
-            android:gravity="center"/>
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="25dp"/>
 
         <TextView
             android:id="@+id/profileEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pic"
+            android:layout_below="@+id/profileName"
             android:text="Email"
             android:textSize="20dp"
-            android:gravity="center"/>
+            android:layout_marginLeft="25dp"/>
 
         <TextView
             android:id="@+id/profileContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pic"
+            android:layout_below="@+id/profileEmail"
             android:text="Contact"
             android:textSize="20dp"
-            android:gravity="center"/>
+            android:layout_marginLeft="25dp"/>
 
         <TextView
             android:id="@+id/profileLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Location"
-            android:textSize="20dp"
-            android:gravity="center"/>
+            android:layout_toRightOf="@+id/pic"
+            android:layout_below="@+id/profileContact"
+            android:layout_marginLeft="25dp"
+            android:textSize="20dp"/>
 
         <Button
             android:id="@+id/editProfile"
             android:onClick="editProfile"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
+            android:layout_below="@+id/profileLocation"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
             android:background="#E169DC3F"
             android:text="Edit Profile" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/changePassword"
+            android:onClick="changePassword"
+            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_below="@+id/profileLocation"
+            android:layout_toRightOf="@+id/editProfile"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#E10375FF"
+            android:text="Change Password"
+            tools:ignore="OnClick" />
+
+    </RelativeLayout>
 
     <Button
+        android:id="@+id/logout"
         android:onClick="logout"
         android:text="Logout"
         android:background="#F83239"
         android:layout_gravity="center"
-        android:layout_marginTop="627sp"
+        android:layout_above="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

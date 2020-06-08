@@ -45,10 +45,11 @@ public class Profile extends AppCompatActivity {
         profileedit = findViewById(R.id.editProfile);
         picture = findViewById(R.id.pic);
 
-        DatabaseReference databaseReference = firebaseDatabase.getReference(mFirebaseAuth.getUid());
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Users").child(mFirebaseAuth.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 ViewProfile viewProfile = dataSnapshot.getValue(ViewProfile.class);
                 profilename.setText(viewProfile.getpFullName());
                 profileemail.setText(viewProfile.getpEmail());
