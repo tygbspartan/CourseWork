@@ -51,6 +51,22 @@
         android:layout_margin="10dp"/>
 
     <TextView
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location:"
+        android:layout_marginLeft="10dp"/>
+
+    <EditText
+        android:inputType="textPersonName"
+        android:id="@+id/location_id"
+        android:hint="Enter Name.."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+
+    <TextView
         android:id="@+id/email_title"
         android:textSize="18sp"
         android:textColor="#000"

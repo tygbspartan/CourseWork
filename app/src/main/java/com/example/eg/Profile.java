@@ -22,6 +22,8 @@ public class Profile extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
+
+
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
@@ -56,5 +58,8 @@ public class Profile extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
+    }
+
+    public void editProfile(View view) {
     }
 }

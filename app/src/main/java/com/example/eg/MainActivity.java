@@ -14,11 +14,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText signup_email, signup_pass, signup_confirmpass, signup_fname, signup_contact;
+    private EditText signup_email, signup_pass, signup_confirmpass, signup_fname, signup_contact,signup_location;
+    String name, contact, location, email,pass, confirm_pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         signup_confirmpass = findViewById(R.id.signup_Confirmpass_id);
         signup_fname = findViewById(R.id.fullname_id);
         signup_contact = findViewById(R.id.phone_id);
+        signup_location = findViewById(R.id.location_id);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -45,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void signup(View view) {
         //signup button click garda yo call hunxa
-        String name = signup_fname.getText().toString().trim();
-        String contact = signup_contact.getText().toString().trim();
-        String email = signup_email.getText().toString().trim();
-        String pass = signup_pass.getText().toString().trim();
-        String confirm_pass = signup_confirmpass.getText().toString().trim();
+        name = signup_fname.getText().toString().trim();
+        contact = signup_contact.getText().toString().trim();
+        location = signup_location.getText().toString().trim();
+        email = signup_email.getText().toString().trim();
+        pass = signup_pass.getText().toString().trim();
+        confirm_pass = signup_confirmpass.getText().toString().trim();
 
 
         if (pass.length() < 6){
@@ -72,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            sendUserData();
                             finish();
                             // Sign in success, update UI with the signed-in user's information
                             startActivity(new Intent(MainActivity.this, loginactivity.class));
@@ -88,5 +94,12 @@ public class MainActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+
+    private void sendUserData(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(mAuth.getUid());
+        ViewProfile viewProfile = new ViewProfile(name,email,contact,location);
+        myRef.setValue(viewProfile);
     }
 }
