@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,7 @@ public class Profile extends AppCompatActivity {
 
     private TextView profilename, profileemail, profilecontact, profilelocation;
     private Button profileedit;
-
+    private ImageView picture;
 
     FirebaseAuth mFirebaseAuth;
     FirebaseDatabase firebaseDatabase;
@@ -41,6 +43,7 @@ public class Profile extends AppCompatActivity {
         profilecontact= findViewById(R.id.profileContact);
         profilelocation = findViewById(R.id.profileLocation);
         profileedit = findViewById(R.id.editProfile);
+        picture = findViewById(R.id.pic);
 
         DatabaseReference databaseReference = firebaseDatabase.getReference(mFirebaseAuth.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
