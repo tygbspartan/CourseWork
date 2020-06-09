@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Profile extends AppCompatActivity {
 
     private TextView profilename, profileemail, profilecontact, profilelocation;
-    private Button profileedit;
+    private Button profileedit, passwordChange;
     private ImageView picture;
 
     FirebaseAuth mFirebaseAuth;
@@ -35,15 +35,16 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
         profilename = findViewById(R.id.profileName);
         profileemail = findViewById(R.id.profileEmail);
         profilecontact= findViewById(R.id.profileContact);
         profilelocation = findViewById(R.id.profileLocation);
-        profileedit = findViewById(R.id.editProfile);
+        profileedit = findViewById(R.id.btnEditProfile);
         picture = findViewById(R.id.pic);
+        passwordChange = findViewById(R.id.btnChangePassword);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
         DatabaseReference databaseReference = firebaseDatabase.getReference("Users").child(mFirebaseAuth.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -101,5 +102,10 @@ public class Profile extends AppCompatActivity {
     }
 
     public void editProfile(View view) {
+        startActivity(new Intent(Profile.this, EditProfile.class));
+    }
+
+    public void changePassword(View view) {
+        startActivity(new Intent(Profile.this, ChangePassword.class));
     }
 }

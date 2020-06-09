@@ -63,7 +63,7 @@
             android:textSize="20dp"/>
 
         <Button
-            android:id="@+id/editProfile"
+            android:id="@+id/btnEditProfile"
             android:onClick="editProfile"
             android:layout_height="wrap_content"
             android:layout_width="140dp"
@@ -75,17 +75,16 @@
             android:text="Edit Profile" />
 
         <Button
-            android:id="@+id/changePassword"
+            android:id="@+id/btnChangePassword"
             android:onClick="changePassword"
             android:layout_height="wrap_content"
             android:layout_width="140dp"
             android:layout_below="@+id/profileLocation"
-            android:layout_toRightOf="@+id/editProfile"
+            android:layout_toRightOf="@+id/btnEditProfile"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:background="#E10375FF"
-            android:text="Change Password"
-            tools:ignore="OnClick" />
+            android:text="Change Password" />
 
     </RelativeLayout>
 

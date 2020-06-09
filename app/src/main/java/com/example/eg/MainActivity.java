@@ -63,10 +63,16 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Password Length Insuff..", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        else if (name.isEmpty() || contact.isEmpty() || location.isEmpty() || email.isEmpty() || pass.isEmpty() || confirm_pass.isEmpty()){
+            Toast.makeText(this, "Fields should not be empty!!", Toast.LENGTH_SHORT).show();
+        }
+
         else if(pass.equals(confirm_pass)){
             //crieteria pass for signup user
             createAccount(email,pass);
         }
+
         else{
             Toast.makeText(this, "Password Dont Match", Toast.LENGTH_SHORT).show();
         }
