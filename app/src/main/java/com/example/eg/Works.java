@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
+import androidx.appcompat.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,6 +26,7 @@ public class Works extends AppCompatActivity {
     private DatabaseReference dbRef;
     private List<Job> listWorks;
     WorksAdapter adapter;
+    private SearchView searchBar;
 
 
     @Override
@@ -36,6 +38,7 @@ public class Works extends AppCompatActivity {
 
         lv = findViewById(R.id.lv_works);
         listWorks = new ArrayList<>();
+        searchBar = findViewById(R.id.searchView);
 
 
         //initialize and assign variable
@@ -91,5 +94,32 @@ public class Works extends AppCompatActivity {
                 Toast.makeText(Works.this, "Your work could not be uploaded", Toast.LENGTH_SHORT).show();
             }
         });
+
+        if(searchBar != null){
+            searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String s) {
+                    search(s);
+                    return true;
+                }
+            });
+        }
     }
+
+    private void search(String str) {
+        List<Job> myList = new ArrayList<>();
+        for(Job object : listWorks){
+            if(object.getWorkTitle().toLowerCase().contains(str.toLowerCase())){
+                myList.add(object);
+            }
+        }
+        WorksAdapter adapter = new WorksAdapter(Works.this,myList);
+        lv.setAdapter(adapter);
+    }
+
 }
