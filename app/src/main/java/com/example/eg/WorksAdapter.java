@@ -42,9 +42,9 @@ public class WorksAdapter extends ArrayAdapter<Job> {
         Job jobObj = workList.get(position);
         tvTitle.setText(jobObj.getWorkTitle());
         tvDesc.setText(jobObj.getWorkDesc());
-        tvLocation.setText(jobObj.getLocation());
-        tvContact.setText(jobObj.getContact());
-        tvSalary.setText(jobObj.getSalary());
+        tvLocation.setText("Location: " + jobObj.getLocation());
+        tvContact.setText("Contact: " + jobObj.getContact());
+        tvSalary.setText("Salary: " + jobObj.getSalary());
 //        tvContact.setText("Contact");
 //        tvSalary.setText("Salary");
 

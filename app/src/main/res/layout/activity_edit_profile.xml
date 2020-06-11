@@ -87,10 +87,10 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:text="Update"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textColor="#FFFFFF"
             android:background="#1CBA22"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
