@@ -21,7 +21,7 @@
             android:layout_height="50dp"
             android:padding="10dp"
             app:queryHint="Search.."
-            />
+            app:iconifiedByDefault="false"/>
 
         <ListView
             android:id="@+id/lv_works"
