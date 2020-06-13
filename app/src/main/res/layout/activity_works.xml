@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="54dp"
-        android:background="#F7E7DCEA"
+        android:background="#FAFAFA"
         tools:context=".Works">
         
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            
+
             app:queryHint="Search.."
             app:iconifiedByDefault="false"/>
 
