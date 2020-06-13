@@ -3,6 +3,7 @@ package com.example.eg;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -13,8 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +33,8 @@ public class Profile extends AppCompatActivity {
 
     FirebaseAuth mFirebaseAuth;
     FirebaseDatabase firebaseDatabase;
+
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,8 @@ public class Profile extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+
+        dialog = new ProgressDialog(this);
 
         DatabaseReference databaseReference = firebaseDatabase.getReference("Users").child(mFirebaseAuth.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -107,5 +115,27 @@ public class Profile extends AppCompatActivity {
 
     public void changePassword(View view) {
         startActivity(new Intent(Profile.this, ChangePassword.class));
+    }
+
+    public void btnDeactivateAccount(View view) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            dialog.setMessage("Deactivating your account..");
+            dialog.show();
+            user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(getApplicationContext(), "Account Deactivated", Toast.LENGTH_SHORT).show();
+                        finish();
+                        Intent intent = new Intent(Profile.this, loginactivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Account could not be deactivated.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
 }
