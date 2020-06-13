@@ -28,6 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pic"
             android:text="Full Name"
+            android:textColor="#000"
+            android:textStyle="bold"
             android:textSize="30dp"
             android:layout_marginTop="25sp"
             android:layout_marginLeft="25dp"/>
@@ -40,6 +42,7 @@
             android:layout_below="@+id/profileName"
             android:text="Email"
             android:textSize="20dp"
+            android:textColor="#000"
             android:layout_marginLeft="25dp"/>
 
         <TextView
@@ -50,6 +53,7 @@
             android:layout_below="@+id/profileEmail"
             android:text="Contact"
             android:textSize="20dp"
+            android:textColor="#000"
             android:layout_marginLeft="25dp"/>
 
         <TextView
@@ -60,12 +64,14 @@
             android:layout_toRightOf="@+id/pic"
             android:layout_below="@+id/profileContact"
             android:layout_marginLeft="25dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textColor="#000"/>
 
         <Button
             android:id="@+id/btnEditProfile"
             android:onClick="editProfile"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_width="140dp"
             android:layout_below="@+id/profileLocation"
             android:layout_gravity="center"
@@ -79,6 +85,7 @@
             android:onClick="changePassword"
             android:layout_height="wrap_content"
             android:layout_width="140dp"
+            android:textStyle="bold"
             android:layout_below="@+id/profileLocation"
             android:layout_toRightOf="@+id/btnEditProfile"
             android:layout_marginLeft="20dp"
@@ -89,6 +96,7 @@
         <Button
             android:id="@+id/btnDeactivate"
             android:onClick="btnDeactivateAccount"
+            android:textStyle="bold"
             android:layout_width="164dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnChangePassword"
@@ -112,8 +120,11 @@
         android:id="@+id/logout"
         android:onClick="logout"
         android:text="Logout"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:background="#F83239"
         android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
         android:layout_above="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

@@ -18,14 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
+            android:textStyle="bold"
             android:gravity="center"
             android:text="ADD WORK"
-            android:textColor="#0297AA"
+            android:background="#CDD7FA"
+            android:textColor="#1F99A8"
             android:textSize="35sp" />
 
     <TextView
         android:id="@+id/work_title"
         android:textSize="20sp"
+        android:textStyle="italic"
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,6 +43,7 @@
     <TextView
         android:id="@+id/work_description"
         android:textSize="20sp"
+        android:textStyle="italic"
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +58,7 @@
     <TextView
         android:id="@+id/location"
         android:textSize="20sp"
+        android:textStyle="italic"
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,6 +73,7 @@
     <TextView
         android:id="@+id/contact"
         android:textSize="20sp"
+        android:textStyle="italic"
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,6 +88,7 @@
     <TextView
         android:id="@+id/salary"
         android:textSize="20sp"
+        android:textStyle="italic"
         android:textColor="#000000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,7 +103,7 @@
     <Button
         android:onClick="add_work"
         android:text="Add"
-        android:background="@color/colorAccent"
+        android:background="#28F4E0"
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
         android:layout_width="wrap_content"

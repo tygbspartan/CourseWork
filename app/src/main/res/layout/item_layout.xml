@@ -12,7 +12,7 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:text="Work Title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -20,7 +20,7 @@
         android:id="@+id/textDesc"
         android:textSize="20sp"
         android:text="Work Description"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -28,7 +28,7 @@
         android:id="@+id/textLoc"
         android:textSize="20sp"
         android:text="Location"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -37,17 +37,16 @@
         android:id="@+id/textContact"
         android:textSize="20sp"
         android:text="Contact"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:textColor="#000000"
         android:id="@+id/textSalary"
-        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Salary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
