@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:padding="10dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -115,11 +114,26 @@
         android:onClick="signup"
         android:text="Sign Up"
         android:textSize="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="#FF5722"
         android:textColor="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_gravity="center"/>
 
+    <TextView
+        android:text="Already have an account?"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="btnSignIn"
+        android:text="Sign In"
+        android:background="#03A9F4"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"/>
+S
 </LinearLayout>

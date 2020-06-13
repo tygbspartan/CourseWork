@@ -110,4 +110,9 @@ public class MainActivity extends AppCompatActivity {
         ViewProfile viewProfile = new ViewProfile(name,email,contact,location);
         databaseReference.setValue(viewProfile);
     }
+
+    public void btnSignIn(View view) {
+        Intent intent = new Intent(MainActivity.this,loginactivity.class);
+        startActivity(intent);
+    }
 }
