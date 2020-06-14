@@ -114,7 +114,7 @@ public class Works extends AppCompatActivity {
     private void search(String str) {
         List<Job> myList = new ArrayList<>();
         for(Job object : listWorks){
-            if(object.getWorkTitle().toLowerCase().contains(str.toLowerCase())){
+            if(object.getWorkTitle().toLowerCase().contains(str.toLowerCase()) || object.getLocation().toLowerCase().contains(str.toLowerCase())){
                 myList.add(object);
             }
         }
